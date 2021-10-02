@@ -18,6 +18,7 @@ import {
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 import { NativeRouter, Route } from 'react-router-native'
 import Home from './pages/Home'
+import CreateLobby from "./pages/CreateLobby";
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark'
@@ -33,7 +34,7 @@ const App: () => Node = () => {
         style={backgroundStyle}>
         <NativeRouter>
           <Route exact path={'/'} component={Home} />
-          <Route path={'/createLobby'} component={Home} />
+          <Route path={'/createLobby'} component={CreateLobby} />
           <Route path={'/joinLobby'} component={Home} />
           <Route path={'/lobby/:lobbyId'} component={Home} />
         </NativeRouter>

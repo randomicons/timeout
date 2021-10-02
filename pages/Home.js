@@ -1,17 +1,20 @@
-import { Button, View } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 import Section from '../components/Section'
+import { Link } from 'react-router-native'
 
 const Home = () => {
   return (
     <View title="Time Out">
       <Section>
-        <Button title={'Join Lobby'} onClick={() => {
-        }} />
+        <Link>
+          <Text>Join Lobby</Text>
+        </Link>
       </Section>
       <Section>
-        <Button title={'Create Lobby'} onClick={() => {
-        }} />
+        <Link to={'/createLobby'}>
+          <Text>Create Lobby</Text>
+        </Link>
       </Section>
       {/*<LearnMoreLinks />*/}
     </View>
