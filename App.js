@@ -6,45 +6,18 @@
  * @flow strict-local
  */
 
-import type {Node} from 'react'
+import type { Node } from 'react'
 import React from 'react'
 import {
-  Button,
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
   useColorScheme,
-  View,
 } from 'react-native'
 
-import {Colors} from 'react-native/Libraries/NewAppScreen'
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark'
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  )
-}
+import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { NativeRouter, Route } from 'react-router-native'
+import Home from './pages/Home'
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark'
@@ -58,40 +31,15 @@ const App: () => Node = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Timeout">
-            <Button title={'Join Lobby'} onClick={() => {}} />
-          </Section>
-          <Section>
-            <Button title={'Create Lobby'} onClick={() => {}} />
-          </Section>
-          {/*<LearnMoreLinks />*/}
-        </View>
+        <NativeRouter>
+          <Route exact path={'/'} component={Home} />
+          <Route path={'/createLobby'} component={Home} />
+          <Route path={'/joinLobby'} component={Home} />
+          <Route path={'/lobby/:lobbyId'} component={Home} />
+        </NativeRouter>
       </ScrollView>
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-})
 
 export default App
