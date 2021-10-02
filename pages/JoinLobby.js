@@ -1,10 +1,17 @@
 import { Button, StyleSheet, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 
-const CreateLobby = () => {
+const JoinLobby = () => {
   const [password, setPassword] = useState('')
+  const [lobbyId, setLobbyId] = useState('')
   return (
     <View>
+      <TextInput
+        styles={styles.input}
+        value={lobbyId}
+        onChangeText={setLobbyId}
+        placeholder="lobby id"
+      />
       <TextInput
         styles={styles.input}
         value={password}
@@ -12,7 +19,7 @@ const CreateLobby = () => {
         placeholder="password"
         secureTextEntry
       />
-      <Button title={'Create'} />
+      <Button title={'Join'} />
     </View>
   )
 }
@@ -26,4 +33,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default CreateLobby
+export default JoinLobby

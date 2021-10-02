@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <View title="Time Out">
       <Section>
-        <Link>
+        <Link to={'/joinLobby'}>
           <Text>Join Lobby</Text>
         </Link>
       </Section>

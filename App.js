@@ -8,17 +8,13 @@
 
 import type { Node } from 'react'
 import React from 'react'
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native'
+import { SafeAreaView, ScrollView, useColorScheme } from 'react-native'
 
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 import { NativeRouter, Route } from 'react-router-native'
 import Home from './pages/Home'
-import CreateLobby from "./pages/CreateLobby";
+import CreateLobby from './pages/CreateLobby'
+import JoinLobby from './pages/JoinLobby'
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark'
@@ -35,7 +31,7 @@ const App: () => Node = () => {
         <NativeRouter>
           <Route exact path={'/'} component={Home} />
           <Route path={'/createLobby'} component={CreateLobby} />
-          <Route path={'/joinLobby'} component={Home} />
+          <Route path={'/joinLobby'} component={JoinLobby} />
           <Route path={'/lobby/:lobbyId'} component={Home} />
         </NativeRouter>
       </ScrollView>
