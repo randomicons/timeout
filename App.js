@@ -24,7 +24,7 @@ import Discuss from './pages/Discuss'
 
 
 const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'light'
+  const isDarkMode = useColorScheme() === 'dark'
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -40,7 +40,6 @@ const App: () => Node = () => {
           <Route path={'/createLobby'} component={CreateLobby} />
           <Route path={'/joinLobby'} component={JoinLobby} />
           <Route path={'/lobby'} component={Lobby} />
-          <Route path={'/discuss'} component={Discuss} />
           <Route path={'/discuss'} component={Discuss} />
         </NativeRouter>
       </ScrollView>

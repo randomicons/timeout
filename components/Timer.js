@@ -7,13 +7,14 @@ import tw from 'tailwind-react-native-classnames'
 const Timer = () =>{
     return(
         
-<CountdownCircleTimer
+<CountdownCircleTimer 
       isPlaying
       duration={60}
       colors={[
         ['#004777', 0.4],
         ['#f7b801', 0.4],
         ['#A30000', 0.2],
+       
       ]}>
       {({ remainingTime, animatedColor }) => (
         <View>

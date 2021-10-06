@@ -7,7 +7,7 @@ import tw from 'tailwind-react-native-classnames'
 const Home = () => {
   return (
     <View title="Time Out">
-      <Text style={tw`bg-red-500npm pt-16 mx-auto`}>Welcome to Time Out!</Text>
+      <Text style={tw`text-lg pt-16 mx-auto`}>Welcome to Time Out!</Text>
       <Section>
         <Link to={'/joinLobby'}>
           <Text>Join Lobby</Text>

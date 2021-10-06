@@ -11,7 +11,6 @@ const Discuss = () =>{
         <View>
 
 <Text style={tw`pt-16 mx-auto text-xl bg-white  `}>  Discuss !</Text>
-<Text style={tw`p-16 mx-auto text-xl bg-white `}>  Discuss !</Text>
 
 <Link to={'/'}>
           <Text>Back to Home</Text>
