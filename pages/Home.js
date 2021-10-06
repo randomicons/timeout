@@ -1,17 +1,32 @@
-import { Button, View } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 import Section from '../components/Section'
+import { Link } from 'react-router-native'
+import tw from 'tailwind-react-native-classnames'
 
 const Home = () => {
   return (
     <View title="Time Out">
+      <Text style={tw`bg-red-500npm`}>Welcome to Time Out!</Text>
       <Section>
-        <Button title={'Join Lobby'} onClick={() => {
-        }} />
+        <Link to={'/joinLobby'}>
+          <Text>Join Lobby</Text>
+        </Link>
       </Section>
       <Section>
-        <Button title={'Create Lobby'} onClick={() => {
-        }} />
+        <Link to={'/createLobby'}>
+          <Text>Create Lobby</Text>
+        </Link>
+      </Section>
+      <Section>
+        <Link to={'/lobby'}>
+          <Text>Time OUT! </Text>
+        </Link>
+      </Section>
+      <Section>
+        <Link to={'/discuss'}>
+          <Text>Discuss </Text>
+        </Link>
       </Section>
       {/*<LearnMoreLinks />*/}
     </View>
