@@ -6,3 +6,5 @@ Time Out allows individuals who are experiencing conflict to pause and recollect
 **How we built it**
 
 React Native libraries, Android Studio, Nodejs, and MongoDB.
+
+Yolo
